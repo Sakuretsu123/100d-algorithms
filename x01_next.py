@@ -15,7 +15,29 @@ def next(current , myList):
   determine the next item from the list. The list contains False/True Boolean values
   that indicate whether the current item can be used
   '''
-  return None
+
+
+
+  #current = base = int(input("item from the list : "))
+  #myList = [False, True, False, True, True, False]
+  base = current
+  while True : 
+    if current >= len(myList): 
+      current = 0 
+    elif myList[current] is True and current == base:
+      current +=1
+    elif myList[current] is False : 
+      current += 1 
+    elif myList[current] is True: 
+      print(current)
+      break
+    else : 
+      return None
+  return current
+  
+
+
+
 
 def main():
   data = [False, True, True, False, True, False]
@@ -33,12 +55,9 @@ def main():
   data = [False, False, False]
   assert next( 1, data ) == None
   
-  
-  
-  
-  
-  
-  
 
-if __name__ == "__main__:
-  main()
+  
+  
+  
+  
+main()
