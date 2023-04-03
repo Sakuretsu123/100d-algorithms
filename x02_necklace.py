@@ -11,6 +11,8 @@ def necklace(a,b):
   a1 = a
   b1 = b
   i = 0
+  p = 0
+  number = 0
   """
   inputs: 
   a : int value [0..9]
@@ -26,11 +28,17 @@ def necklace(a,b):
   myList.append(str(a))
   myList.append(str(b))
   
+  
   while a != a1 and b != b1 or i == 0: 
       i += 1
       c = int(a) + int(b) 
       if c < 10 : 
-          myList.append(str(c))
+        myList[p]
+        myList.append(str(c))
+        a = myList[-1]
+        b = myList[-2]
+        a = int(a)
+        b = int(b)
       elif c > 10: 
         c = str(c)
         a = c[0]
