@@ -7,6 +7,10 @@ extra: What is the shortest necklace number sequence that can be made?
 """
 
 def necklace(a,b):
+  c = 0 
+  a1 = a
+  b1 = b
+  i = 0
   """
   inputs: 
   a : int value [0..9]
@@ -15,7 +19,33 @@ def necklace(a,b):
   return
   str necklace number
   """
+
+    
+ 
+  myList = ["94"]
+  myList.append(str(a))
+  myList.append(str(b))
+  
+  while a != a1 and b != b1 or i == 0: 
+      i += 1
+      c = int(a) + int(b) 
+      if c < 10 : 
+          myList.append(str(c))
+      elif c > 10: 
+        c = str(c)
+        a = c[0]
+        b = c[1]
+        a = int(a)
+        b = int(b)
+      
+
+  print(myList)
   return None
+
+
+
+
+
 
 def main():
   assert necklace(9,4) == "94483257314595516742685494"

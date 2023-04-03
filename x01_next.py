@@ -21,9 +21,14 @@ def next(current , myList):
   #current = base = int(input("item from the list : "))
   #myList = [False, True, False, True, True, False]
   base = current
+
+  result = myList.count(True)
+
   while True : 
     if current >= len(myList): 
       current = 0 
+    elif result == 0: 
+      return None
     elif myList[current] is True and current == base:
       current +=1
     elif myList[current] is False : 
@@ -31,8 +36,9 @@ def next(current , myList):
     elif myList[current] is True: 
       print(current)
       break
-    else : 
-      return None
+    result = myList.count(True)
+    
+   
   return current
   
 
