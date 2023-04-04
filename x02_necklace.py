@@ -8,11 +8,10 @@ extra: What is the shortest necklace number sequence that can be made?
 
 def necklace(a,b):
   c = 0 
-  a1 = a
-  b1 = b
+  a1 = str(a)
+  b1 = str(b)
   i = 0
   p = 0
-  number = 0
   """
   inputs: 
   a : int value [0..9]
@@ -24,14 +23,15 @@ def necklace(a,b):
 
     
  
-  myList = ["94"]
+  myList = []
   myList.append(str(a))
   myList.append(str(b))
+
   
-  
-  while a != a1 and b != b1 or i == 0: 
-      i += 1
+  while True:
       c = int(a) + int(b) 
+      if a == a1 and b == b1 and i != 0: 
+        break
       if c < 10 : 
         myList[p]
         myList.append(str(c))
@@ -39,7 +39,9 @@ def necklace(a,b):
         b = myList[-2]
         a = int(a)
         b = int(b)
+        i += 1
       elif c > 10: 
+        i += 1
         c = str(c)
         a = c[0]
         b = c[1]
