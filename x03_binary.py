@@ -11,16 +11,45 @@ def toBinary(value):
   input: value (int)
   return : list of values
   '''
+  c= 0
+  myList = []
+  while c != 8:
+    c += 1
+    if value > 1:
+      value = value //2
+      if value%2 == 0:
+          myList.append(0)
+      if value%2 != 0:
+          myList.append(1)
+    if value <= 1: 
+      myList.append(0)
+
+  print(myList)
+      
+
+
+
   
-  return None
+  return myList
 
 def toDecimal(myList):
+  c = 0
+  decimal = 0
+  for i in myList :
+    if i == 0: 
+      c +=1
+    if i == 1:
+      decimal = decimal + pow(2, c)
+      c += 1
+    
+
+
   '''
   input: list of values
   return int
   convert binary to decimal
   '''
-  return None
+  return decimal
 
 def problem1():
   assert toBinary(0) == [0,0,0,0,0,0,0,0]
