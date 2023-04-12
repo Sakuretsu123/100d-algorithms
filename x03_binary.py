@@ -11,22 +11,20 @@ def toBinary(value):
   input: value (int)
   return : list of values
   '''
+ 
+      
   c= 0
   myList = []
-  while c != 8:
+  while len(myList) != 8:
     c += 1
-    if value > 1:
-      value = value //2
+    if value >= 1:
       if value%2 == 0:
           myList.append(0)
       if value%2 != 0:
           myList.append(1)
-    if value <= 1: 
+    value = value // 2
+    if value < 1: 
       myList.append(0)
-
-  print(myList)
-      
-
 
 
   
